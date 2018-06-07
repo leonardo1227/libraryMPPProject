@@ -1,34 +1,47 @@
-package edu.mum.cs401mpp.libraryproject.entity;
+package cs401project.entities;
 
-import java.util.List;
+import java.util.Collection;
 
 public class State {
+
 	private long id;
+
 	private String name;
+
 	private String abreviation;
-	private List<City> City;
-	public List<City> getCity() {
-		return City;
-	}
-	public void setCity(List<City> city) {
-		City = city;
-	}
+
+	private Collection<City> city;
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getAbreviation() {
 		return abreviation;
 	}
+
 	public void setAbreviation(String abreviation) {
 		this.abreviation = abreviation;
 	}
+
+	public Collection<City> getCity() {
+		return city;
+	}
+
+	public void setCity(Collection<City> city) {
+		this.city = city;
+	}
+
 }
