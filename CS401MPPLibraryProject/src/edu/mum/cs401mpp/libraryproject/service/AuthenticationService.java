@@ -15,6 +15,7 @@ public class AuthenticationService {
 			if(s.getUsername().equals(username) && s.getPassword().equals(passkey))
 				return s;
 		
+		System.out.println("user not found");
 		return null;
 		
 	}

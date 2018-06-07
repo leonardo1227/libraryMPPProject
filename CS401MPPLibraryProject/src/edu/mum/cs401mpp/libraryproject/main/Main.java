@@ -15,14 +15,19 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		
 		//mock login
-		System.out.println("Enter username");
-		String uname = scan.next();
-		System.out.println("Enter password");
-		String pword = scan.next();
-		Stuff s = LoginService.checkUsernameandPassword(uname, pword);
+		Stuff s = null;
+		
+		do{
+			System.out.println("Enter username");
+			String uname = scan.next();
+			System.out.println("Enter password");
+			String pword = scan.next();
+			s = LoginService.checkUsernameandPassword(uname, pword);
+		}while(s == null);
+		
 		if(s != null){
 			String authlevel = s.getAuthorizationLevel().getDescription();
-			
+		
 			if(authlevel.equalsIgnoreCase("Librarian")) {
 				//LibrarianService.checkoutBook();
 			}else if(authlevel.equalsIgnoreCase("Admin")){
