@@ -72,4 +72,7 @@ public class AdminService {
 		
 	}
 	
+	public static void addnewCopy() {
+		AddBookCopy.addBookCopy();
+	}
 }

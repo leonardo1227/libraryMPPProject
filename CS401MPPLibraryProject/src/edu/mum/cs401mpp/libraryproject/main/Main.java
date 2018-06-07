@@ -49,7 +49,7 @@ public class Main {
 				if(i == 1){
 					AdminService.addNewMember(s);
 				}else if(i == 2){
-					//AdminService.addnewCopy();
+					AdminService.addnewCopy();
 				}else if(i == 0)
 					looper = false;
 				else

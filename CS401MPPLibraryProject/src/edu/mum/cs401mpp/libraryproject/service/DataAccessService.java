@@ -1,9 +1,12 @@
 package edu.mum.cs401mpp.libraryproject.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import edu.mum.cs401mpp.libraryproject.entity.AuthorizationLevel;
+import edu.mum.cs401mpp.libraryproject.entity.Book;
+import edu.mum.cs401mpp.libraryproject.entity.BookCopy;
 import edu.mum.cs401mpp.libraryproject.entity.LibraryMember;
 import edu.mum.cs401mpp.libraryproject.entity.Person;
 import edu.mum.cs401mpp.libraryproject.entity.Stuff;
@@ -12,6 +15,20 @@ public class DataAccessService {
 	
 	static List<Stuff> listOfStuff = new ArrayList<>();
 	static List<LibraryMember> listOfLibraryMembes = new ArrayList<>();
+	
+	static HashMap<String, Book> books = new HashMap<>();
+	
+	static HashMap<String, HashMap<Integer, BookCopy>> bookCopy = new HashMap<>();
+	static int bookCopyIdCounter = 0;
+	
+	static {
+		Book b = new Book();
+		b.setId(2);
+		b.setTitle("Core java");
+		books.put("2", b);
+		HashMap<Integer, BookCopy> bc = new HashMap<>();
+		bookCopy.put("2", bc);
+	}
 	
 	public static void simulateData() {
 		
@@ -65,4 +82,16 @@ public class DataAccessService {
 		listOfLibraryMembes.add(libraryMember);
 	}
 	
+	public static Book getBook(String isbn) {
+		Book b = books.get(isbn);
+		
+		if(null == b)
+			throw new RuntimeException("Book not found");
+		
+		return b;
+	}
+	
+	public static void addBookCopy(String isbn, BookCopy bc) {
+		bookCopy.get(isbn).put(bc.getCopyNumber(), bc);
+	}
 }
