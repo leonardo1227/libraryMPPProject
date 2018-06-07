@@ -6,10 +6,10 @@ import edu.mum.cs401mpp.libraryproject.entity.Stuff;
 import edu.mum.cs401mpp.libraryproject.service.LoginService;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		
+		DataAccessService.simulateData();
 		
 		//mock login
 		System.out.println("Enter username");
