@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.mum.cs401mpp.libraryproject.entity.AuthorizationLevel;
+import edu.mum.cs401mpp.libraryproject.entity.LibraryMember;
 import edu.mum.cs401mpp.libraryproject.entity.Person;
 import edu.mum.cs401mpp.libraryproject.entity.Stuff;
 
 public class DataAccessService {
 	
 	static List<Stuff> listOfStuff = new ArrayList<>();
+	static List<LibraryMember> listOfLibraryMembes = new ArrayList<>();
 	
 	public static void simulateData() {
 		
@@ -52,6 +54,14 @@ public class DataAccessService {
 	
 	public static List<Stuff> getStaff() {
 		return listOfStuff;
+	}
+	
+	public static List<LibraryMember> getLibaryMembers() {
+		return listOfLibraryMembes;
+	}
+	
+	public static void persistNewMember(LibraryMember libraryMember) {
+		listOfLibraryMembes.add(libraryMember);
 	}
 	
 }

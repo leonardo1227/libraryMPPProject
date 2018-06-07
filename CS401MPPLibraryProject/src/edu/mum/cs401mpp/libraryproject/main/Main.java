@@ -3,6 +3,7 @@ package edu.mum.cs401mpp.libraryproject.main;
 import java.util.Scanner;
 
 import edu.mum.cs401mpp.libraryproject.entity.Stuff;
+import edu.mum.cs401mpp.libraryproject.service.AdminService;
 import edu.mum.cs401mpp.libraryproject.service.DataAccessService;
 import edu.mum.cs401mpp.libraryproject.service.LoginService;
 
@@ -25,44 +26,44 @@ public class Main {
 			s = LoginService.checkUsernameandPassword(uname, pword);
 		}while(s == null);
 		
-		if(s != null){
-			String authlevel = s.getAuthorizationLevel().getDescription();
-		
-			if(authlevel.equalsIgnoreCase("Librarian")) {
-				//LibrarianService.checkoutBook();
-			}else if(authlevel.equalsIgnoreCase("Admin")){
-				boolean looper = true;
-				while(looper){
-				System.out.println("Type 1 to add new member or 2 to add new book or 0 to stop");
-				int i = scan.nextInt();
+
+		String authlevel = s.getAuthorizationLevel().getDescription();
+	
+		if(authlevel.equalsIgnoreCase("Librarian")) {
+			//LibrarianService.checkoutBook();
+		}else if(authlevel.equalsIgnoreCase("Admin")){
+			boolean looper = true;
+			while(looper){
+			System.out.println("Type 1 to add new member or 2 to add new book or 0 to stop");
+			
+			int i = scan.nextInt();
+			if(i == 1){
 				
-				if(i == 1){
-					//AdminService.addnewMember();
-				}else if(i==2){
-					//AdminService.addnewCopy();
-				}else if(i==0)
-					looper = false;
-				else
-					System.out.println("Invalid input");
-				}
-			}else if(authlevel.equalsIgnoreCase("Both")){
-				boolean looper = true;
-				while(looper){
-				System.out.println("Type 1 to add new member, 2 to add new book, 3 add member, or 0 to stop");
-				int i = scan.nextInt();
-				
-				if(i == 1){
-					//AdminService.addnewMember();
-				}else if(i==2){
-					//AdminService.addnewCopy();
-				}else if(i==3){
-					//LibraryService.checkoutBook();
-				}else if(i==0)
-					looper = false;
-				else
-					System.out.println("Invalid input");
-				}
-				
+				AdminService.addNewMember(s);
+			
+			}else if(i==2){
+				//AdminService.addnewCopy();
+			}else if(i==0)
+				looper = false;
+			else
+				System.out.println("Invalid input");
+			}
+		}else if(authlevel.equalsIgnoreCase("Both")){
+			boolean looper = true;
+			while(looper){
+			System.out.println("Type 1 to add new member, 2 to add new book, 3 add member, or 0 to stop");
+			int i = scan.nextInt();
+			
+			if(i == 1){
+				//AdminService.addnewMember();
+			}else if(i==2){
+				//AdminService.addnewCopy();
+			}else if(i==3){
+				//LibraryService.checkoutBook();
+			}else if(i==0)
+				looper = false;
+			else
+				System.out.println("Invalid input");
 			}
 			
 		}
