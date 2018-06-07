@@ -1,4 +1,4 @@
-package cs401project.entities;
+package edu.mum.cs401mpp.libraryproject.entity;
 
 public class Contact {
 

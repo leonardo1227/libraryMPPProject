@@ -1,10 +1,10 @@
-package cs401project.entities;
+package edu.mum.cs401mpp.libraryproject.entity;
 
 import java.time.LocalDate;
 
 public class CheckOutRecordBook {
 
-	private LocalDate checkOutDate;
+	private LocalDate  checkOutDate;
 
 	private LocalDate dueToDate;
 
