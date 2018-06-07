@@ -3,7 +3,9 @@ package edu.mum.cs401mpp.libraryproject.entity;
 public class Stuff extends PersonRole {
 
 	private long id;
-
+	
+	private String username;
+	
 	private String password;
 
 	private AuthorizationLevel authorizationLevel;
@@ -14,6 +16,14 @@ public class Stuff extends PersonRole {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
