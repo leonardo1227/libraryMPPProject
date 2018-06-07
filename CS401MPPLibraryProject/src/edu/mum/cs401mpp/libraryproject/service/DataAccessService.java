@@ -61,6 +61,7 @@ public class DataAccessService {
 	}
 	
 	public static void persistNewMember(LibraryMember libraryMember) {
+		System.out.println(":::::: New library member has been created successfully! :::::: ");
 		listOfLibraryMembes.add(libraryMember);
 	}
 	

@@ -18,10 +18,16 @@ public class Main {
 		//mock login
 		Stuff s = null;
 		
+		/*
+		 * Admin Account : admin/admin
+		 * Librarian Avvount: librarian/librarian
+		 */
+		
+		
 		do{
-			System.out.println("Enter username");
+			System.out.println("Enter your username:");
 			String uname = scan.next();
-			System.out.println("Enter password");
+			System.out.println("Enter your password:");
 			String pword = scan.next();
 			s = LoginService.checkUsernameandPassword(uname, pword);
 		}while(s == null);
@@ -33,21 +39,24 @@ public class Main {
 			//LibrarianService.checkoutBook();
 		}else if(authlevel.equalsIgnoreCase("Admin")){
 			boolean looper = true;
-			while(looper){
-			System.out.println("Type 1 to add new member or 2 to add new book or 0 to stop");
 			
-			int i = scan.nextInt();
-			if(i == 1){
+			while(looper) {
+			
+				System.out.println("Type 1 to add new member or 2 to add new book or 0 to stop");
 				
-				AdminService.addNewMember(s);
-			
-			}else if(i==2){
-				//AdminService.addnewCopy();
-			}else if(i==0)
-				looper = false;
-			else
-				System.out.println("Invalid input");
+				int i = scan.nextInt();
+				
+				if(i == 1){
+					AdminService.addNewMember(s);
+				}else if(i == 2){
+					//AdminService.addnewCopy();
+				}else if(i == 0)
+					looper = false;
+				else
+					System.out.println("Invalid input");	
+				
 			}
+		
 		}else if(authlevel.equalsIgnoreCase("Both")){
 			boolean looper = true;
 			while(looper){
@@ -55,7 +64,9 @@ public class Main {
 			int i = scan.nextInt();
 			
 			if(i == 1){
-				//AdminService.addnewMember();
+				
+				AdminService.addNewMember(s);
+			
 			}else if(i==2){
 				//AdminService.addnewCopy();
 			}else if(i==3){
