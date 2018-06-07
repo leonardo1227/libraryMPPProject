@@ -2,7 +2,6 @@ package edu.mum.cs401mpp.libraryproject.service;
 
 import java.util.List;
 
-import edu.mum.cs401mpp.libraryproject.entity.Person;
 import edu.mum.cs401mpp.libraryproject.entity.Stuff;
 
 public class AuthenticationService {
