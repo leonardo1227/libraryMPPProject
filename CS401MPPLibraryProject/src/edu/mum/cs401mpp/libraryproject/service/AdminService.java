@@ -1,5 +1,6 @@
 package edu.mum.cs401mpp.libraryproject.service;
 
+import java.util.Date;
 import java.util.Scanner;
 
 import edu.mum.cs401mpp.libraryproject.entity.Adress;
@@ -64,6 +65,7 @@ public class AdminService {
 			person.setAdress(address);
 			
 			libraryMemeber.setPerson(person);
+			libraryMemeber.setId(GenerateLibraryMemberID());
 			
 			DataAccessService.persistNewMember(libraryMemeber);
 			
@@ -72,7 +74,11 @@ public class AdminService {
 		
 	}
 	
-	public static void addnewCopy() {
+	public static void addNewCopy() {
 		AddBookCopy.addBookCopy();
+	}
+	
+	public static long GenerateLibraryMemberID() {
+		return (long) (new Date().getTime()/1000);
 	}
 }

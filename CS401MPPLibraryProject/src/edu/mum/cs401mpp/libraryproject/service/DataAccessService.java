@@ -32,7 +32,7 @@ public class DataAccessService {
 	
 	public static void simulateData() {
 		
-		System.out.println("Init authorization levels ...");
+		System.out.println(":::::: Loading Data ::::::");
 		AuthorizationLevel adminAuthLevel = new AuthorizationLevel();
 		adminAuthLevel.setId(1);
 		adminAuthLevel.setDescription("ADMIN");
@@ -40,7 +40,6 @@ public class DataAccessService {
 		librarianAuthLevel.setId(2);
 		librarianAuthLevel.setDescription("LIBRARIAN");
 		
-		System.out.println("Init stuff ...");
 		Person personOne  = new Person();
 		personOne.setId(1);
 		personOne.setFirstName("Jeff");
@@ -86,7 +85,7 @@ public class DataAccessService {
 		Book b = books.get(isbn);
 		
 		if(null == b)
-			throw new RuntimeException("Book not found");
+			System.out.println(":::::: Book not found! :::::: ");
 		
 		return b;
 	}

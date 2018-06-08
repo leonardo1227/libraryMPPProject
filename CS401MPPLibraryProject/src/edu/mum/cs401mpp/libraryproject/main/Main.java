@@ -41,42 +41,41 @@ public class Main {
 			boolean looper = true;
 			
 			while(looper) {
-			
-				System.out.println("Type 1 to add new member or 2 to add new book or 0 to stop");
-				
+				System.out.println("Type 1 to add a new member");
+				System.out.println("Type 2 to add a new book");
+				System.out.println("Type 0 to exit");
+				System.out.print("Answer: ");
 				int i = scan.nextInt();
-				
 				if(i == 1){
 					AdminService.addNewMember(s);
 				}else if(i == 2){
-					AdminService.addnewCopy();
+					AdminService.addNewCopy();
 				}else if(i == 0)
 					looper = false;
 				else
 					System.out.println("Invalid input");	
-				
 			}
 		
-		}else if(authlevel.equalsIgnoreCase("Both")){
-			boolean looper = true;
-			while(looper){
-			System.out.println("Type 1 to add new member, 2 to add new book, 3 add member, or 0 to stop");
-			int i = scan.nextInt();
-			
-			if(i == 1){
-				
-				AdminService.addNewMember(s);
-			
-			}else if(i==2){
-				//AdminService.addnewCopy();
-			}else if(i==3){
-				//LibraryService.checkoutBook();
-			}else if(i==0)
-				looper = false;
-			else
-				System.out.println("Invalid input");
-			}
-			
+		}else 
+			if(authlevel.equalsIgnoreCase("Both")) {
+				boolean looper = true;
+				while(looper){
+					System.out.println("Type 1 to add a new member");
+					System.out.println("Type 2 to add a new book");
+					System.out.println("Type 0 to exit");
+					System.out.print("Answer: ");
+					int i = scan.nextInt();
+					if(i == 1){
+						AdminService.addNewMember(s);
+					}else if(i==2){
+						AdminService.addNewCopy();
+					}else if(i==3){
+						//LibraryService.checkoutBook();
+					}else if(i==0)
+						looper = false;
+					else
+						System.out.println("Invalid input");
+				}
 		}
 		
 		scan.close();
