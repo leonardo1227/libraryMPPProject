@@ -1,6 +1,6 @@
 package edu.mum.cs401mpp.libraryproject.entity;
 
-public class Stuff extends PersonRole {
+public class Staff extends PersonRole {
 
 	private long id;
 	

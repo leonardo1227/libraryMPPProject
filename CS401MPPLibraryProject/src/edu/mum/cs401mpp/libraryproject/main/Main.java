@@ -2,7 +2,7 @@ package  edu.mum.cs401mpp.libraryproject.main;
 
 import java.util.Scanner;
 
-import edu.mum.cs401mpp.libraryproject.entity.Stuff;
+import edu.mum.cs401mpp.libraryproject.entity.Staff;
 import edu.mum.cs401mpp.libraryproject.service.AdminService;
 import edu.mum.cs401mpp.libraryproject.service.DataAccessService;
 import edu.mum.cs401mpp.libraryproject.service.LibrarianService;
@@ -17,7 +17,7 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		
 		//mock login
-		Stuff s = null;
+		Staff s = null;
 		
 		/*
 		 * Admin Account : admin/admin

@@ -1,10 +1,10 @@
 package edu.mum.cs401mpp.libraryproject.service;
 
-import edu.mum.cs401mpp.libraryproject.entity.Stuff;
+import edu.mum.cs401mpp.libraryproject.entity.Staff;
 
 public class LoginService {
 
-	public static Stuff checkUsernameandPassword(String uname, String pword) {
+	public static Staff checkUsernameandPassword(String uname, String pword) {
 		return  AuthenticationService.checkAuthentication(uname, pword);
 	}
 	

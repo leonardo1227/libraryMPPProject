@@ -8,14 +8,14 @@ import edu.mum.cs401mpp.libraryproject.entity.AuthorizationLevel;
 import edu.mum.cs401mpp.libraryproject.entity.City;
 import edu.mum.cs401mpp.libraryproject.entity.LibraryMember;
 import edu.mum.cs401mpp.libraryproject.entity.Person;
-import edu.mum.cs401mpp.libraryproject.entity.Stuff;
+import edu.mum.cs401mpp.libraryproject.entity.Staff;
 import edu.mum.cs401mpp.libraryproject.entity.Book;
 import edu.mum.cs401mpp.libraryproject.entity.BookCopy;
 import edu.mum.cs401mpp.libraryproject.entity.BorrowRule;
 
 public class DataAccessService {
 
-	static List<Stuff> listOfStuff = new ArrayList<>();
+	static List<Staff> listOfStuff = new ArrayList<>();
 	static List<LibraryMember> listOfLibraryMembes = new ArrayList<>();
 	static List<Book> Books = new ArrayList<>();
 
@@ -43,13 +43,13 @@ public class DataAccessService {
 		personTwo.setId(2);
 		personTwo.setFirstName("Bell");
 		personTwo.setLastName("Ragi");
-		Stuff admin = new Stuff();
+		Staff admin = new Staff();
 		admin.setId(1);
 		admin.setAuthorizationLevel(adminAuthLevel);
 		admin.setUsername("admin");
 		admin.setPassword("admin");
 		admin.setPerson(personOne);
-		Stuff librarian = new Stuff();
+		Staff librarian = new Staff();
 		librarian.setId(2);
 		librarian.setAuthorizationLevel(librarianAuthLevel);
 		librarian.setUsername("librarian");
@@ -63,7 +63,7 @@ public class DataAccessService {
 
 	AuthorizationLevel adminAuthLevel = new AuthorizationLevel();
 
-	public static List<Stuff> getStaff() {
+	public static List<Staff> getStaff() {
 		return listOfStuff;
 	}
 

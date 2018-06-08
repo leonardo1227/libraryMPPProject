@@ -8,7 +8,7 @@ public class AuthorizationLevel {
 
 	private String description;
 
-	private Collection<Stuff> stuff;
+	private Collection<Staff> staff;
 
 	public long getId() {
 		return id;
@@ -26,12 +26,12 @@ public class AuthorizationLevel {
 		this.description = description;
 	}
 
-	public Collection<Stuff> getStuff() {
-		return stuff;
+	public Collection<Staff> getStuff() {
+		return staff;
 	}
 
-	public void setStuff(Collection<Stuff> stuff) {
-		this.stuff = stuff;
+	public void setStuff(Collection<Staff> staff) {
+		this.staff = staff;
 	}
 	
 	

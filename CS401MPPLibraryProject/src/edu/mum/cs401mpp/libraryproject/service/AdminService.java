@@ -9,11 +9,11 @@ import edu.mum.cs401mpp.libraryproject.entity.Contact;
 import edu.mum.cs401mpp.libraryproject.entity.LibraryMember;
 import edu.mum.cs401mpp.libraryproject.entity.Person;
 import edu.mum.cs401mpp.libraryproject.entity.State;
-import edu.mum.cs401mpp.libraryproject.entity.Stuff;
+import edu.mum.cs401mpp.libraryproject.entity.Staff;
 
 public class AdminService {
 	
-	public static void addNewMember(Stuff s) {
+	public static void addNewMember(Staff s) {
 		
 		if(s.getAuthorizationLevel().getDescription().equalsIgnoreCase("ADMIN")) {
 			
